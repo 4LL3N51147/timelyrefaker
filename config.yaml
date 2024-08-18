@@ -1,0 +1,21 @@
+num_rows: 100
+table_name: aaaa
+write_batch_num: 1
+schema:
+  storage_format:
+    timelyre
+  fields:
+    int:
+      - count: 3
+      - name: card
+        range:
+          start: 0
+          end: 100
+  table_props:
+    timelyre.timestamp.col: col_timestamp
+    timelyre.tag.cols: card
+    epoch.engine.enabled: false
+
+pre_queries:
+  - use tpq
+post_queries:
